@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title></title>
+	<style>
+	.emphasis {
+		color:green;
+	}
+
+
+	li {
+		color:black;
+	}
+	/*ul.emphasis li {
+		
+	}	
+	ul.emphasis > li {
+		color: red;
+	}*/
+	</style>
+</head>
+<body>
+
+
+	<h1>Lesson - 3 </h1>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat.
+	</p>
+
+
+		<ul class="emphasis">
+			<li>item</li>
+			<li>item 2</li>
+			<li>item 2</li>
+			<li>item 4</li>
+			<li>item 5</li>
+			<li>
+				<ul>
+					<li>hello from the nest.</li>
+				</ul
+
+			</li>
+		</ul>
+
+	<form name="login">
+			<input name="fname" type="text" class="fname" value="default value"/>
+			<input name="lname" type="text" class="lname" value="default value"/>
+	</form>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+
+<script>
+	//1
+	//jQuery('ul.emphasis').children('li').css('color','red');
+
+	//2
+	//jQuery('ul.emphasis').children('li').css('color','red');
+
+	//3
+	//console.log(jQuery('ul.emphasis').children('li').first());
+
+	
+
+	// jQuery('ul.emphasis')
+	// 	.children('li')
+	// 		.eq(2)
+	// 		.next().text('added with jQuery');
+
+	$('li').parent('ul').removeClass("emphasis");
+
+	// $('ul.emphasis')
+	// 	.children('li')
+	// 		.eq(3)
+	// 		.prev().text('added with jQuery');
+
+	 //console.log($('ul').parents('.container'));
+	// console.log($('ul').closest('.container'));
+
+	//$('li').parent().removeClass('emphasis');
+	
+
+	//$('ul').parents('container').removeClass('container');
+	// Or better performace with below one
+	//$('ul').parents('div.container').removeClass('container');
+
+	//$('ul').closest('div.container').removeClass('container');
+
+	console.log($('form').children('input.fname').val("Pawan"));
+	console.log($('form').children('input.lname').val("Gandhi"));
+</script>
+
+</body>
+</html>
+
+
+
+
+
+

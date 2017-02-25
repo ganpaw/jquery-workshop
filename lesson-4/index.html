@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title>jQuery Events</title>
+	<link rel="stylesheet" href="day.css">
+</head>
+<body>
+
+<h1>Lesson 4</h1>
+
+<!-- html5 based customized attribute, should be prefixed by data- -->
+<button data-pawan="day">Day</button>
+<button data-pawan="night">Night</button>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+
+<script>
+
+
+(function() {
+	console.log("function called");
+	var link = $('link');
+	console.log(link);
+	$('button').on('click', function() {
+		//console.log(this);
+		//console.log($(this)); // right way
+
+		//var stylesheet = $(this).text().toLowerCase();
+		//var stylesheet = $(this).attr('data-pawan');
+
+		// Get a access to jquery variable and get stylesheet from custom html5 based data variable
+		var $this = $(this),
+			stylesheet = $this.data('pawan');
+
+		console.log(stylesheet);		
+		link.attr('href',stylesheet + '.css');
+
+		// toggle the button and remove disabled attribute of the sibling
+		$this
+			.siblings('button')
+			.removeAttr('disabled')
+			.end()
+			.attr('disabled','disabled');
+
+	});
+})();
+
+</script>
+
+
+
+</body>
+</html>

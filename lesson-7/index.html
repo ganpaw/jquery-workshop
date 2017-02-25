@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title>Appending Content</title>
+	<style>
+	article {
+		width: 830px;
+		margin: auto;
+		border: 3px solid;
+	}
+	h1 {
+		border: 1px solid;
+	}
+	p{
+		border: 1px solid;
+	}
+	blockquote.co {
+		float: center;
+		background: #e3e3e3;
+		font-size: 2em;
+		width: 35%;
+		text-align: center;
+	}
+	.pClass {
+		color:red;
+		font-family: Candara;
+	}
+	</style>
+</head>
+<body>
+
+
+<article>
+	<h1>My Awesome Post</h1>
+	<p class="pClass">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua.
+	</p>
+	<p>
+		<span class=co>Span1</span>, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua.
+	</p>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua.
+	</p>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua.
+	</p>
+	<p>
+		Consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. <span class=co>Span2.</span> sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua.
+	</p>
+</article>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+
+<script>
+
+(function() {
+
+	$('article').append("Appending String to article using 'append()'");
+	$('article').prepend("Prepending String to article using 'prepend()'");
+
+	$('<h2></h2>', {
+		text: 'Creating h2 element and appending to article using appendTo()',
+		class: 'myClass'
+	}).appendTo('article');
+
+
+	$('<h2></h2>', {
+		text: 'Creating h2 element and prepending to article using prependTo()',
+		class: 'myClass'
+	}).prependTo('article');
+	
+
+	$('<h2></h2>', {
+		text: 'Creating h2 element and insertBefore to article using insertBefore()',
+		class: 'myClass'
+	}).insertBefore('article');
+
+
+	$('<h2></h2>', {
+		text: 'Creating h2 element and insertAfter to article using insertAfter()',
+		class: 'myClass'
+	}).insertAfter('article');
+
+	console.log($('p.pClass').css('background','#000000').appendTo('article'));
+
+	var co = $('article').find('span.co').each(function() {
+		var $this = $(this);
+
+		$('<blockquote></blockquote>', {
+			class: 'co',
+			text: $this.text()
+		}).prependTo( $this.closest('p') );
+		
+	});
+	
+
+})();
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

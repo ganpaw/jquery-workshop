@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+	<style>
+	.emphasis { font-weight: bold;}
+	</style>
+
+	<script>
+
+	var changeClass = function(){
+		$('li:first-child').css('color','red');
+	}
+	
+	// $(function() {
+	// 	$('li:first-child').addClass('emphasis');
+	// });
+
+	$(document).ready(function() {
+		$('li:first-child').addClass('emphasis');
+	});
+	//$(document).ready(changeClass);
+	// or
+	//$(changeClass);
+	</script>	
+</head>
+<body>
+
+<ul>
+	<li>build1</li>
+	<li>build2</li>
+	<li>build3</li>
+</ul>
+
+</body>
+</html>
